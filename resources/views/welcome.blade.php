@@ -8,16 +8,18 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/app.css">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                /*background-color: #fff;*/
+                /*background-image: url("img/fondowhatsapp.png");*/
+                /*color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
-                margin: 0;
+                margin: 0;*/
             }
 
             .full-height {
@@ -63,34 +65,33 @@
             }
         </style>
     </head>
-    <body>
+    <body class="body">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right ">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a class="button-action" href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a class="button-action" href="{{ route('login') }}">Iniciar sesión</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            <div class="contenido">
+                <div class="contenido-titulo">
+                    <div class="contenido-titulo-nombre">
+                        <img style="width: 60px; height: 60px;" src="svg/coin.svg" alt="logo-iAhorroApp"><p style="display: inline;">&nbsp i<span class="color-blue">Ahorro</span>App</p>
+                    </div>
+                    <div class="contenido-titulo-descripcion">
+                        Aplicación para gestionar los movimientos de dinero
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="contenido-informacion">
+                    
                 </div>
             </div>
         </div>
